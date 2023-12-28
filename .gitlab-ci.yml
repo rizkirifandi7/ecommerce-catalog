@@ -1,7 +1,7 @@
 image: docker:latest
 
 variables:
-  REPOSITORY_URL: rizkirifani7/todoapi-cicd
+  REPOSITORY_URL: rizkirifani7/task-5
   IMAGE_TAG: latest
 
 services:
@@ -19,11 +19,11 @@ build:
   script:
     - echo "Building image..."
     - docker build
-      -t todoapi-cicd:latest
+      -t task-5:latest
       --build-arg PORT=$PORT
       --no-cache .
     - echo "Tagging image..."
-    - docker tag todoapi-cicd:latest $REPOSITORY_URL:latest
+    - docker tag task-5:latest $REPOSITORY_URL:latest
     - echo "Pushing image..."
     - docker push $REPOSITORY_URL:latest
   only:
@@ -32,8 +32,8 @@ build:
 deploy:
   stage: deploy
   script:
-    - docker stop todoapi-cicd || true && docker rm todoapi-cicd || true
-    - docker container run -dt -p $PORT:$PORT --name todoapi-cicd $REPOSITORY_URL:latest
+    - docker stop task-5 || true && docker rm task-5 || true
+    - docker container run -dt -p $PORT:$PORT --name task-5 $REPOSITORY_URL:latest
     - docker image prune -f
   only:
     - main
