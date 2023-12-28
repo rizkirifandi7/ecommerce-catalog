@@ -18,7 +18,7 @@
 4. Jalankan server
 
    ```bash
-    npm start dev
+    npm run dev
 
 5. Buka browser dan masuk ke `http://localhost:8080/`
 
