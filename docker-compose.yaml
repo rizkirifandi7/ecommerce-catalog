@@ -1,0 +1,12 @@
+version: '3.7'
+name: task-5
+services:
+  web:
+    container_name: task-5-ecommerce
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    ports:
+    - '8080:8080'
+    volumes:
+    - '..:/app'

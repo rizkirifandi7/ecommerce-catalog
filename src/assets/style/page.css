@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+:root {
+	--navy: #002772;
+	--pink: #fde2ff;
+	--black: #1e1e1e;
+	--magenta: #720060;
+	--blue: #d6e6ff;
+	--dark-gray: #3f3f3f;
+	--gray: #dcdcdc;
+	--white: #ffffff;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bg-content {
+	position: absolute;
+	z-index: 1;
+	top: -15%;
+	left: 0;
+	width: 100%;
+}
+
+.bg-content > img {
+	width: 100%;
+	height: 400px;
+}
+
+.card {
+	display: flex;
+	position: relative;
+	z-index: 2;
+	width: 80%;
+	height: 80%;
+	background-color: var(--white);
+	border-radius: 10px;
+	padding: 48px 32px;
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* skeleton */
+.skeleton-image {
+	width: 300px;
+	height: 100%;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton-details-product {
+	width: 700px;
+	height: 70%;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton-details-button {
+	width: 700px;
+	height: 90px;
+	margin-top: 24px;
+	animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* unavailable product */
+.product-unavailable-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.product-unavailable-container > .bg-content {
+	top: 10%;
+	left: 5%;
+}
+
+.product-unavailable-container > .product-unavailable {
+	text-align: center;
+	z-index: 2;
+}
+
+.product-unavailable-container .btn-next {
+	margin: 0px auto;
+	border: 2px solid black;
+	color: black;
+}
+
+.product-unavailable {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-unavailable > .btn > .btn-next {
+	width: 100%;
+	height: 36px;
+	font-size: 16px;
+	border-radius: none;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+/* available product */
+.product-container {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.product-image {
+	flex: 0 0 30%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-image > img {
+	width: 80%;
+}
+
+.product-details {
+	flex: 0 0 65%;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-right: 24px;
+}
+
+.product-details .title {
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.product-details .category-title {
+	display: flex;
+	justify-content: space-between;
+	padding: 16px 0;
+	font-size: 14px;
+	color: var(--dark-gray);
+	border-bottom: 1px solid var(--gray);
+}
+
+.product-details .rating {
+	display: flex;
+	gap: 4px;
+	align-items: center;
+}
+
+.rating > .circle {
+	width: 14px;
+	height: 14px;
+	border-radius: 100%;
+}
+
+.rating > .circle.empty {
+	background-color: var(--gray);
+}
+
+.product-details .description {
+	width: 100%;
+	margin: 16px 0;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--black);
+}
+
+.product-details > .button-content {
+	padding-top: 16px;
+	border-top: 1px solid var(--gray);
+}
+
+.product-details .price {
+	font-size: 28px;
+	font-weight: 600;
+}
+
+.btn {
+	margin-top: 16px;
+	width: 100%;
+	display: flex;
+	gap: 20px;
+}
+
+.btn > .btn-buy,
+.btn > .btn-next {
+	width: 100%;
+	height: 36px;
+	font-size: 16px;
+	border-radius: none;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.btn > .btn-buy:hover,
+.btn > .btn-next:hover {
+	transform: scale(1.05);
+}
+
+.btn > .btn-buy {
+	color: var(--white);
+	border: none;
+}
+
+.btn > .btn-next {
+	background-color: var(--white);
+}
+
+.bg-blue {
+	background: linear-gradient(180deg, var(--blue) 65%, var(--white) 50%);
+}
+
+.bg-pink {
+	background: linear-gradient(180deg, var(--pink) 65%, var(--white) 50%);
+}
+
+.bg-gray {
+	background: linear-gradient(180deg, var(--gray) 65%, var(--white) 50%);
+}
+
+.bg-white {
+	background-color: var(--white);
+}
+
+.bg-navy {
+	background-color: var(--navy);
+}
+
+.bg-magenta {
+	background-color: var(--magenta);
+}
+
+.border-navy {
+	border: 2px solid var(--navy);
+}
+
+.border-magenta {
+	border: 2px solid var(--magenta);
+}
+
+.font-navy {
+	color: var(--navy);
+}
+
+.font-magenta {
+	color: var(--magenta);
+}
+
+/* animation */
+@keyframes pulse {
+	0%,
+	100% {
+		background-color: var(--gray);
+		opacity: 0.8;
+	}
+	50% {
+		background-color: var(--gray);
+		opacity: 0.3;
+	}
+}
